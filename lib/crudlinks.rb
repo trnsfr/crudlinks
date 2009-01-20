@@ -38,7 +38,7 @@ class Crudlinks
   
   
   def extract_links(links="")
-    @extra_links = links.split(",") rescue []
+    @extra_links ||= links.scan(/<a.*?>.*?<\/a>/) rescue []
   end
   
   
